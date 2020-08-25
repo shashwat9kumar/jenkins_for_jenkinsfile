@@ -31,13 +31,10 @@ pipeline{
           }
       }
         
-        stage('Test phase Starts'){
-          steps{
-          echo 'Start the Test phase'
-          }
-      }
+       
         stage('Test'){
           steps{
+              echo 'Start the Test phase'
           bat 'mvn test'
           }
       }
