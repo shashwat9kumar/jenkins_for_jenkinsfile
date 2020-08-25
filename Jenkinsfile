@@ -1,22 +1,15 @@
-pipeline {
-  agent any 
-  stages {
-    stage('build'){
-      steps {
-        echo 'Build stage'
+pipeline{
+    agent any
+    stages{
+      stage('Build'){
+          steps{
+          echo 'Build Stage'
+          }
+      }
+      stage('Test'){
+          steps{
+          bat 'mvn clean'
+          }
       }
     }
-    
-    stage('test'){
-      steps {
-        echo 'Test stage'
-      }
-    }
-    
-    stage('production'){
-      steps {
-        echo 'Production stage'
-      }
-    }
-  }
 }
