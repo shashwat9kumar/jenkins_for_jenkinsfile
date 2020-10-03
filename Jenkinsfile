@@ -42,5 +42,18 @@ pipeline{
           bat 'mvn test'
           }
       }
+        
+       
+        
+      stage('Sonar phase Starts'){
+          steps{
+          echo 'Start the Sonar phase'
+          }
+      }  
+      stage('Sonar'){
+          steps{
+            bat 'mvn sonar:sonar -Dsonar.host.url=http://localhost:9000 -Dsonar.analysis.mode=publish'
+          }
+      }
     }
 }
